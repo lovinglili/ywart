@@ -14,6 +14,11 @@ import AppArtist from '@page/artist/AppArtist'
 
 const routes=[
     {
+        
+        path:'/',
+        redirect:{name:'home'}
+    },
+    {
         path:'/home',
         name:'home',
         component:AppHome
