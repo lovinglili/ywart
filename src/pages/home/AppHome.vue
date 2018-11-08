@@ -1,12 +1,18 @@
 <template>
 <div class='home'>
-    <h1>apphome</h1>
+    <home-banner></home-banner>
+    <banner-down></banner-down>
 </div>
 </template>
 
 <script>
+import HomeBanner from "@c/commons/home/HomeBanner"
+import BannerDown from "@c/commons/home/BannerDown"
     export default {
-     
+     components:{
+         HomeBanner,
+         BannerDown
+     }
     }
 </script>
 

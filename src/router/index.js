@@ -10,6 +10,10 @@ import AppMine from '@page/mine/AppMine'
 import AppClassify from '@page/classify/AppClassify'
 import AppCart from '@page/cart/AppCart'
 import AppArtist from '@page/artist/AppArtist'
+import BannerNav from '@c/commons/home/bannerdown/BannerNav'
+
+
+
 
 
 const routes=[
@@ -21,32 +25,51 @@ const routes=[
     {
         path:'/home',
         name:'home',
-        component:AppHome
+        components:{
+           main: AppHome
+        }
     },
     {
         path: '/not-found',
         name: 'not-found',
-        component: AppNotFound
+        components:{
+            noBottomnav: AppNotFound
+         }
     },
     {
         path:'/mine',
         name:'mine',
-        component:AppMine
+        components:{
+            main: AppMine
+         }
     },
     {
         path:'/classify',
         name:'classify',
-        component:AppClassify
+        components:{
+            main: AppClassify
+         }
     },
     {
         path:'/cart',
         name:'cart',
-        component:AppCart
+        components:{
+            main: AppCart
+         }
     },
     {
         path:'/artist',
         name:'artist',
-        component:AppArtist
+        components:{
+            main: AppArtist
+         }
+    },
+    {
+        path: '/bannernav',
+        name: 'bannernav',
+        components:{
+            noBottomnav:BannerNav
+         }
     },
     {
         path: '**',

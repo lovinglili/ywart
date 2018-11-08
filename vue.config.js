@@ -6,7 +6,16 @@ function resolve(url){
 
 module.exports={
     devServer:{
-        port:8899
+        port:8899,
+        proxy:{
+            '/ycmain':{
+                target:'https://openapi.ywart.com/',
+                changeOrigin:true,
+                pathRewrite:{
+                    '^/ycmain':''
+                }
+            }
+        }
     },
     chainWebpack:(config)=>{//配置别名
         config
