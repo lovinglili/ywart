@@ -1,31 +1,18 @@
 <template>
 <div ref="root" class='home'>
     <div class="home-div">
-    <component :is="type.which"></component>
-    <!-- <home-banner v-if="homeData.Banners" :billboards= "homeData.Banners.Banners"></home-banner>
-    <banner-down v-if="homeData.CustomMenus" :imgNavs= "homeData.CustomMenus.Menus"></banner-down>
-    <hot-original v-if="homeData.HotOriginals" :hots= "homeData.HotOriginals"></hot-original>
-    <flash-sale  v-if="homeData.SetPriceAction" :flashes= "homeData.SetPriceAction"></flash-sale>
-    <art-eye v-if = "homeData.ArtisticView" :artview="homeData.ArtisticView"></art-eye>
-    <more-use v-if = "homeData.ArtisticLives" :moreuse="moreuses"></more-use> -->
+        <router-view></router-view>
     </div>
-    <top-nav :type="type"></top-nav>
+    <top-nav ></top-nav>
 </div>
 </template>
 
 <script>
-// import HomeBanner from "@c/commons/home/HomeBanner";
-// import BannerDown from "@c/commons/home/BannerDown";
-// import HotOriginal from "@c/commons/home/HotOriginal";
-// import FlashSale from "@c/commons/home/FlashSale";
-// import ArtEye from "@c/commons/home/ArtEye";
-// import MoreUse from "@c/commons/home/MoreUse";
-// import TopNav from "@c/layout/TopNav"
+
 
 import TopNav from "@c/layout/TopNav"
  import  scroll from "@utils/scroll"
- import JingXuan from "@page/home/JingXuan"
-import YuanChuang from "@page/home/YuanChuang"
+
 
 export default {
     // data(){
@@ -55,14 +42,12 @@ export default {
         }
     },
     mounted(){
-        scroll({
-            el: this.$refs.root
-        })
+        // scroll({
+        //     el: this.$refs.root
+        // })
     },
     components: {
-        TopNav,
-        JingXuan,
-        YuanChuang
+        TopNav
   }
   
 };
@@ -72,7 +57,7 @@ export default {
 <style lang="scss">
 
 .home{
-    // overflow: auto;
+    overflow: auto;
     height:100vh;
     .home-div{
 

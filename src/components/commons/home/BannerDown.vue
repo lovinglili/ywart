@@ -16,16 +16,10 @@ export default {
   },
   props:["imgNavs"],
   created() {
-    // console.log(this.imgNavs,"imgNavs")
-    // this.$http({
-    //   url: "/ycmain/2.0/api/AppView/Index/New2?_=1541592295622"
-    // }).then(result => {
-     
-      // this.imgNavs = result.data.Body.CustomMenus.Menus;
+   
       this.imgNavs.forEach((item, index) => {
         item["categories"] = this.categories[index];
       });
-    // });
   },
   methods:{
     goToList(categories){

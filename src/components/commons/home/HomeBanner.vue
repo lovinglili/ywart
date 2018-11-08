@@ -27,24 +27,14 @@ export default {
     };
   },
   props:["billboards"],
-  // created() {
-  //   this.$http({
-  //     url: "/ycmain/2.0/api/AppView/Index/New2?_=1541592295622"
-  //   }).then(result => {
-  
-  //     this.billboards = result.data.Body.Banners.Banners;
-  
-  //   });
-  // },
+ 
   computed: {
       swiper() {
         return this.$refs.mySwiper.swiper
       }
     },
   mounted() {
-    //   var $that=this;
-    //   console.log(this)
-    // console.log(billboards,"billboards")
+  
   }
 };
 </script>
