@@ -4,7 +4,7 @@
      <router-view name="main"></router-view>
      <app-bottom></app-bottom>
     </main>
-    <hr>
+   
      <router-view name="noBottomnav"></router-view>
     
   </div>
