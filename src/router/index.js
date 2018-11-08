@@ -12,8 +12,9 @@ import AppCart from '@page/cart/AppCart'
 import AppArtist from '@page/artist/AppArtist'
 import BannerNav from '@c/commons/home/bannerdown/BannerNav'
 
-
-
+// home的嵌套组件
+// import JingXuan from "@page/home/JingXuan"
+// import YuanChuang from "@page/home/YuanChuang"
 
 
 const routes=[
@@ -22,12 +23,27 @@ const routes=[
         path:'/',
         redirect:{name:'home'}
     },
+    // {
+        
+    //     path:'/home',
+    //     redirect:{path :'/home/jingxuan'}
+    // },
     {
         path:'/home',
         name:'home',
         components:{
            main: AppHome
-        }
+        },
+        // children:[
+        //     {
+        //         path:"jingxuan",
+        //         component:JingXuan
+        //     },
+        //     {
+        //         path:"yuanchuang",
+        //         component:YuanChuang
+        //     }
+        // ]
     },
     {
         path: '/not-found',

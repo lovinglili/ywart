@@ -1,8 +1,8 @@
 <template>
      <div class='banner-down-nav'>
-            <router-link class="banner-down-nav-item" v-for= '(imgNav,index) in imgNavs' :key="index" :to='{name: "bannernav"}'>
+            <div class="banner-down-nav-item" v-for= '(imgNav,index) in imgNavs' :key="index" @click="goToList(imgNav.categories)">
                 <img  :src='imgNav.ImgUrl' >
-            </router-link>     
+            </div>     
         </div>
 </template>
 
@@ -10,22 +10,27 @@
 export default {
   data() {
     return {
-      imgNavs: []
-      // ,
-      // paths: ["youhua", "shuimo", "banhua", "sheying", "diaoshu"]
+      categories: ["油画", "水墨", "版画", "摄影", "雕塑"]
 
     };
   },
+  props:["imgNavs"],
   created() {
-    this.$http({
-      url: "/ycmain/2.0/api/AppView/Index/New2?_=1541592295622"
-    }).then(result => {
+    // console.log(this.imgNavs,"imgNavs")
+    // this.$http({
+    //   url: "/ycmain/2.0/api/AppView/Index/New2?_=1541592295622"
+    // }).then(result => {
      
-      this.imgNavs = result.data.Body.CustomMenus.Menus;
-      // this.imgNavs.forEach((item, index) => {
-      //   item["path"] = this.paths[index];
-      // });
-    });
+      // this.imgNavs = result.data.Body.CustomMenus.Menus;
+      this.imgNavs.forEach((item, index) => {
+        item["categories"] = this.categories[index];
+      });
+    // });
+  },
+  methods:{
+    goToList(categories){
+      this.$router.push({name:'bannernav',query:{name:categories}})
+    }
   }
 };
 </script>
