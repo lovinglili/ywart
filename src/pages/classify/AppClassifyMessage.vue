@@ -46,7 +46,7 @@
                 this.$http({
                     url : "https://www.ywart.com/ajax/index",
                     method : "post",
-                    data : `module=Goods.Buy&action=GetGoods&page=${this.page}&pageSize=10`
+                    data : `module=Goods.Buy&action=GetGoods&page=${this.page}&pageSize=6`
                 }).then(res => {
                 // console.log(res.data.Data.Rows)
                    this.newArr = res.data.Data.Rows;
@@ -80,6 +80,6 @@
 
    
 
-    .vue-waterfall-easy {position: relative!important;}
+    .vue-waterfall-easy {position: absolute!important;}
     
 </style>
