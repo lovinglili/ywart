@@ -19,7 +19,7 @@ export default {
 
 <style lang="scss">
 .banhua{
-     width:100vw;
+        width:100vw;
         height:100vh;
         position:relative;
         background:#fff;

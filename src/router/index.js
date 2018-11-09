@@ -96,7 +96,7 @@ const routes=[
          }
     },
     {
-        path: '/bannernav',
+        path: '/bannernav:id',
         name: 'bannernav',
         components:{
             noBottomnav:BannerNav
