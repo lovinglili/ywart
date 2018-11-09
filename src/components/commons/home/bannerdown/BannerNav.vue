@@ -3,8 +3,17 @@
 </template>
 
 <script>
+    
 export default {
-
+    created(){
+        this.$http({
+            url:"https://www.ywart.com/ajax/index",
+            method:"POST",
+            data:`module=Goods.Buy&action=GetGoods&category=${this.$route.query.name}&page=1&pageSize=6`
+        }).then((result)=>{
+            console.log(result,"result")
+        })
+    }
 }
 </script>
 

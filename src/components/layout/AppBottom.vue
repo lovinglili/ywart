@@ -69,6 +69,7 @@ export default {
   position: fixed;
   bottom: 0;
   left: 0;
+  background:#fff;
   z-index: 100;
   display: flex;
   justify-content: space-around;

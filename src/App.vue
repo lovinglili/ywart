@@ -12,6 +12,7 @@
 <script>
     
 import AppBottom from '@c/layout/AppBottom';
+
     export default {
       components:{
         AppBottom
@@ -20,5 +21,9 @@ import AppBottom from '@c/layout/AppBottom';
 </script>
 
 <style lang="scss">
+.app,main{
+    // overflow: aut?o;
+    height:100vh;
+}
 
 </style>
