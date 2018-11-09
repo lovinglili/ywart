@@ -1,15 +1,20 @@
+
 <template>
-    <div class="appclassify">
-        <app-classify-header></app-classify-header>
-        <app-classify-checklist>
-        </app-classify-checklist>
-        
+    <div>
+        <!-- <app-classify-header></app-classify-header> -->
+        <div class="appclassify" ref = "appclassify">
+            <div class="classify-content">  
+                
+                <app-classify-checklist>
+                </app-classify-checklist>
+            </div> 
+        </div>
     </div>
-    
     
 </template>
     
 <script>
+    import scroll from '@utils/scroll'
     import AppClassifyHeader from '@page/classify/AppClassifyHeader'
     import AppClassifyChecklist from '@page/classify/AppClassifyChecklist'
     export default {
@@ -17,10 +22,18 @@
             AppClassifyHeader,
             AppClassifyChecklist
            
+        },
+        mounted() {
+            this.$nextTick(() => {
+                scroll({
+                    el: this.$refs.appclassify
+                })
+            })
         }
     }
 </script>
 
-<style>
-
+<style lang = "scss">
+    .appclassify{background: white;height: 133%;}
+    .classify-content {height: 133%;}
 </style>

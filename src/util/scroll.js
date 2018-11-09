@@ -13,7 +13,12 @@ const scroll = ({
     //         threshold: 50 // 距离底部多少距离
     //     },
         click: true,
-        bounce:false
+        tap : true,
+        bounce:false,
+        startY : 10,
+        freeScroll : true,
+        probeType :3,
+        mouseWheel : false
     }
     )
 
