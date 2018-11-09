@@ -6,6 +6,7 @@
     
 export default {
     created(){
+        console.log(this.$route.query,this.$route.params)
         this.$http({
             url:"https://www.ywart.com/ajax/index",
             method:"POST",

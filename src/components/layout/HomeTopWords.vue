@@ -18,7 +18,7 @@ export default {
     text-align: center;
     h2{
         
-            font-size: .453333rem;
+            font-size:.453333rem;
             margin-bottom: .053333rem;
             font-weight: bold;
     }

@@ -1,7 +1,5 @@
 <template>
-<div>
-    yuanchuang 
-</div>
+    
 </template>
 
 <script>

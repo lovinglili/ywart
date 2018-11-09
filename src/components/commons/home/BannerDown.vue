@@ -23,6 +23,8 @@ export default {
   },
   methods:{
     goToList(categories){
+      // this.$router.push({params:{id:123},query:{name:categories}})
+
       this.$router.push({name:'bannernav',params:{id:123},query:{name:categories}})
     }
   }
