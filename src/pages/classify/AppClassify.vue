@@ -1,7 +1,7 @@
 
 <template>
-    <div>
-        <!-- <app-classify-header></app-classify-header> -->
+    <div >
+        
         <div class="appclassify" ref = "appclassify">
             <div class="classify-content">  
                 
@@ -9,6 +9,7 @@
                 </app-classify-checklist>
             </div> 
         </div>
+        <app-classify-header></app-classify-header>
     </div>
     
 </template>
@@ -26,7 +27,7 @@
         mounted() {
             this.$nextTick(() => {
                 scroll({
-                    el: this.$refs.appclassify
+                   el: this.$refs.appclassify
                 })
             })
         }
@@ -34,6 +35,6 @@
 </script>
 
 <style lang = "scss">
-    .appclassify{background: white;height: 133%;}
-    .classify-content {height: 133%;}
+    .appclassify{background: white;height: 100%;overflow: hidden;}
+   
 </style>

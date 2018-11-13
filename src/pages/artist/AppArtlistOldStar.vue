@@ -40,7 +40,7 @@
 </script>
 
 <style lang="scss">
-    .artoldstar{padding: .533333rem 0 ;text-align: center;font-size: 34px;border-bottom:1px solid black;}
+    .artoldstar{padding: .533333rem 0 ;text-align: center;font-size: 34px;background: white;margin-top: .266667rem;}
     .artoldstar-message{height: 6.08rem;padding-top: .533333rem;
         .artoldstar-head{height: 1.066667rem;padding-left:.533333rem;padding-right: .32rem;margin-bottom: .4rem;
             .person-img{width: 80px;height: 80px;float: left;margin-right:28px;

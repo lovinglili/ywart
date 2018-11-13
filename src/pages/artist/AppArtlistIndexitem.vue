@@ -35,7 +35,7 @@
 </script>
 
 <style lang="scss">
-    .artindex-item{padding-left: .533333rem;padding-right: .533333rem;
+    .artindex-item{padding-left: .533333rem;padding-right: .533333rem;background:white;
         .index-item{width: 1.6rem;height: 2.4rem;margin-left: .30rem;margin-right: .30rem;display:inline-block;}
         span{display: block;margin-top: .266667rem;font-size: 24px;color: #666;
         text-align: center;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}

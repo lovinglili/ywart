@@ -33,7 +33,8 @@
 </script>
 
 <style lang="scss">
-    .art-allof-box{background: white;overflow: auto;padding-bottom: 13.333333rem;}
-    .art-wraper{padding-top:1.413333rem;}
+    .art-allof-box{background: white;overflow: auto;padding-bottom: 1.666667rem;}
+    .art-wraper{padding-top:1.413333rem;padding-bottom: .266667rem;}
     body {overflow: auto;}
+    .art-content {background: #f2f2f2}
 </style>
