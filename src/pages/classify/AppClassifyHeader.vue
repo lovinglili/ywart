@@ -22,7 +22,7 @@
 </script>
 
 <style lang="scss">
-    .appclassify-header {width: 100%;height: 1.12rem;margin-top: 20px;border-bottom: 1px solid #f8f8f8;position:fixed;
+    .appclassify-header {width: 100%;height: 1.12rem;padding-top: 20px;border-bottom: 1px solid #f8f8f8;position:fixed;top:0;background:white;
         .header-top {width: 100%;height: .8rem;
             .header-peoplehelp {width: 1.2rem;height: .8rem;text-align: center;font-size: .5rem;float: left;}
         }

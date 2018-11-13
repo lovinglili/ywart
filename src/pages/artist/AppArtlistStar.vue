@@ -24,4 +24,5 @@
         p{font-size: .346667rem;line-height: 1.69;letter-spacing: 1.2px; color: #333;outline: none;font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica', 'STHeitiSC-Light', 'Arial', 'sans-serif' !important;}
 
     }
+    .art-star{background: white;}
 </style>

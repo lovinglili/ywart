@@ -1,26 +1,30 @@
 <template>
-    <div class="appclassify-checklist-item clearfix" >
-        <vue-waterfall-easy :imgsArr="imgsArr" @scrollReachBottom = "getData" >
-            <template slot-scope="props"> 
-                <img :src="newSrc+props.value.ImgName" alt = "" >
-                <div class="checklist-item">
+    <div class="appclassify-checklist-item" ref = "appclassifyChecklistItem">
+        
+           <div class="checklist-content clearfix">
+                
+                <div class="checklist-item" 
+                  v-for = "item in imgsArr"
+                  :key = "item.ArtworkId"
+                >
+                    <img :src="newSrc+item.ImgName" alt = "" >
                     <div class="checklist-text">
                         <div class="text-head">
-                            <a v-if = "props.value.Activities" href="">{{props.value.Activities[0].TagName}}</a>
+                            <a v-if = "item.Activities" href="">{{item.Activities[0].TagName}}</a>
                         </div>
-                        <p>￥{{props.value.Price}}</p>
+                        <p>￥{{item.Price}}</p>
                         <div class="text-foot">
-                            <a href="">{{props.value.Material}}</a><a href="">{{props.value.Title}}</a>
+                            <a href="">{{item.Material}}</a><a href="">{{item.Title}}</a>
                         </div>
                     </div>
                 </div>
-            </template>
-        </vue-waterfall-easy>
+          </div>  
     </div>
 </template>
 
 <script>
-import vueWaterfallEasy from "vue-waterfall-easy";
+
+
 export default {
   name: "app",
   data() {
@@ -31,7 +35,7 @@ export default {
     };
   },
   components: {
-    vueWaterfallEasy
+    
   },
   props: ["message"],
   methods: {
@@ -40,14 +44,14 @@ export default {
       this.$http({
         url: "https://www.ywart.com/ajax/index",
         method: "post",
-        data: `module=Goods.Buy&action=GetGoods&category=${this.message.category}&page=${this.page}&pageSize=6&theme=${this.message.theme}&price=${this.message.prise}`
+        data: `module=Goods.Buy&action=GetGoods&category=${this.message.category}&page=${this.page}&pageSize=12&theme=${this.message.theme}&price=${this.message.prise}&SortKey=${~~this.message.sort}`
         
       }).then(res => {
         // console.log(res.data.Data.Rows)
         // console.log(this.newArr)
-        console.log(this.message ,1)
+        
         this.imgsArr = this.imgsArr.concat(res.data.Data.Rows);
-        console.log(this.page, this.imgsArr);
+        
       });
     }
   },
@@ -66,16 +70,26 @@ export default {
     this.getData();
     
   },
-  updated(){
-      console.log(this.message)
+  mounted () {
+      this.scroll = scroll({
+          // el: this.$el
+        el: this.$refs.appclassifyChecklistItem,
+     //   handler : this.getData()
+        
+      })
+      
+    
+
   }
-};
+}
 </script>
 
 <style lang="scss">
 .appclassify-checklist-item {
   width: 9.6rem;
-  height: 100% !important;
+  background: white;
+  height: 100vh;
+  overflow: hidden;
   .img-wraper {
     height: auto !important;
   }
@@ -84,6 +98,8 @@ export default {
   }
   .checklist-item {
     width: 4.6rem;
+    float: left;
+    margin: .093333rem;
     .checklist-text {
       width: 4.333333rem;
       height: 2.533333rem;
@@ -107,11 +123,11 @@ export default {
   height: 1%;
 }
 
-.vue-waterfall-easy {
-  position: absolute !important;
-}
+
 
 .default-card-animation {
   display: inline;
 }
+
+.checklist-content {height: auto;}
 </style>

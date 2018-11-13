@@ -63,4 +63,5 @@
         }
     }
     .artindex-port{margin:.533333rem;font-size: 32px;color: buttontext;font-weight: bold;margin-left: 57px;}
+    .artindex{background: white;margin-top: .266667rem;}
 </style>

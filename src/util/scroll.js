@@ -8,16 +8,16 @@ const scroll = ({
 }) => {
     let scroll = new BetterScroll(el
     , {
-    //     probeType: 2,
-    //     pullUpLoad: { //配置上拉加载
-    //         threshold: 50 // 距离底部多少距离
-    //     },
+        probeType: 2,
+        pullUpLoad: { //配置上拉加载
+            threshold: 50 // 距离底部多少距离
+        },
         click: true,
         tap : true,
         bounce:false,
-        startY : 10,
-        freeScroll : true,
-        probeType :3,
+        startY : 0,
+        scrollX : true,
+        freeScroll: true,
         mouseWheel : false
     }
     )
