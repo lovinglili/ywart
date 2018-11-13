@@ -7,10 +7,9 @@
             </div> -->
             <home-top-words :title="more.Title" :smallwords="more.Summary"></home-top-words>
             <div class="more-content">
-
-                <div class="more-img" v-for="(img ,index) in more.Items" :key="index"><img :src="img.ImgUrl"></div>
-                <div class="go-more"><span>点击查看</span></div>
+                <single-img :moreImg="more.Items"></single-img>
             </div>
+                <div class="go-more"><span>点击查看</span></div>
         </div>
         
 
@@ -19,10 +18,12 @@
 
 <script>
 import HomeTopWords from "@c/layout/HomeTopWords"
+import SingleImg from "@c/commons/home/zaoyi/SingleImg"
 export default {
   props: ["moreuse"],
   components:{
-      HomeTopWords
+      HomeTopWords,
+      SingleImg
   }
 };
 </script>
@@ -33,15 +34,7 @@ export default {
   margin-top: 0.266667rem;
   padding-top: 0.346667rem;
   
-  .more-content{
-      .more-img{
-              width: 92%;
-        margin: 0 auto;
-        margin-top: .4rem;
-        img{
-            width:100%;
-        }
-      }
+  
       .go-more{
             margin-top: .666667rem;
             text-align: center;
@@ -54,7 +47,6 @@ export default {
                     padding-right: .24rem;
             }
       }
-  }
  
 }
 </style>

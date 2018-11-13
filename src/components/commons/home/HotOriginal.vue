@@ -4,12 +4,12 @@
             <p class="hoth2">{{hots.Title}}</p>
             <p class="hotp">{{hots.Summary}}</p>
         </div> -->
-           <home-top-words :title="hots.Title" :smallwords="hots.Summary"></home-top-words>
+           <home-top-words :title="hots.Title " :smallwords="hots.Summary "></home-top-words>
 
         <ul>
-            <li v-for="(hot,index) in hots.Artworks" :key="index">
+            <li v-for="(hot,index) in (hots.Artworks ? hots.Artworks:hots.Prints)" :key="index">
                 <div class="hot-item-img">
-                    <a><img :src="hot.ImgUrl"></a>
+                    <a><img :src=" hot.ImgUrl ? hot.ImgUrl : hot.PreviewImgUrl"></a>
                 </div>
                 <div class="hot-item-words">
                     <i>{{hot.ArtistName}}</i>
@@ -19,16 +19,19 @@
                 </div>
             </li>
         </ul>
+        <div v-if="isbutton" class="hotMore">
+                <span>全部造艺作品</span>
+            </div>
     </div>
 </template>
 
 <script>
 import HomeTopWords from "@c/layout/HomeTopWords"
 export default {
-  props: ["hots"],
+  props: ["hots","isbutton"],
    components:{
       HomeTopWords
-  }
+  },
 };
 </script>
 
@@ -70,6 +73,21 @@ export default {
         }
       }
     }
+  }
+}
+.hotMore {
+  margin-top: -0.533333rem;
+  width: 100%;
+  height: 1.333333rem;
+  line-height: 1.333333rem;
+  text-align: center;
+  color: #666666;
+  font-size: 0.373333rem;
+  span {
+    background: url(https://cdn.ywart.com/icon/JianTou/indexJt.png) no-repeat
+      center right;
+    background-size: 0.106667rem 0.16rem;
+    padding-right: 0.24rem;
   }
 }
 </style>

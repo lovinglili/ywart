@@ -1,17 +1,16 @@
 <template>
     <div >
-      <div v-if="homeData.Banners" class="home-contents">
+      <template v-if="homeData.Banners" class="home-contents">
         
-        <home-banner  :billboards= "homeData.Banners.Banners">
+        <home-banner  :billboards= "homeData.Banners.Banners" >
             <!-- <div class="swiper-scrollbar scrollWidth" slot="scrollbar"></div>       -->
-
         </home-banner>
         <banner-down :imgNavs= "homeData.CustomMenus.Menus"></banner-down>
         <hot-original  :hots= "homeData.HotOriginals"></hot-original>
         <flash-sale  :flashes= "homeData.SetPriceAction"></flash-sale>
         <art-eye  :artview="homeData.ArtisticView"></art-eye>
         <more-use  :moreuse="moreuses"></more-use>
-      </div>
+      </template>
       <div v-else class="bg-lazy"></div>
       <home-footer></home-footer>
     </div>
@@ -70,10 +69,12 @@ export default {
   overflow: hidden;
   // background-color: #f8f8f8;
   padding-bottom: 1.333333rem;
+  
 }
 .bg-lazy {
   width: 100vw;
   height: 100vh;
   background: red;
 }
+
 </style>
