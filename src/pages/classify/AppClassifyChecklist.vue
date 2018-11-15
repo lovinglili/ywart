@@ -101,9 +101,7 @@
                 newdom.forEach(item => {
                     item.classList.remove('liactive')
                 });
-                console.log(dom)
-                console.log(dom.parentNode.childNodes)
-                console.log(this.urlmessage)
+                
                 if (dom.className == ""){
                     dom.classList.add("liactive")
                 }else {
