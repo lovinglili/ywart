@@ -1,6 +1,6 @@
 <template>
     <div >
-      <template v-if="homeData.Banners" class="home-contents">
+      <template v-if="homeData.Banners" class="home-contentss">
         
         <home-banner  :billboards= "homeData.Banners.Banners" >
             <!-- <div class="swiper-scrollbar scrollWidth" slot="scrollbar"></div>       -->
@@ -65,7 +65,7 @@ export default {
 </script>
 
 <style lang="scss">
-.home-contents {
+.home-contentss {
   overflow: hidden;
   // background-color: #f8f8f8;
   padding-bottom: 1.333333rem;

@@ -8,8 +8,9 @@
           </div>
           <hot-original :hots="homeData.GoodPrints" :isbutton="isbutton"></hot-original>
           <home-banner  :billboards= "homeData.MarkArtArtistList"></home-banner>
-          <zy-works :indexDatas=" indexData "></zy-works>
+          <zy-works :indexDatas=" indexData.Rows"></zy-works>
     </div>
+    <div class="nomore">---已经到底了---</div>
 </div>
 </template>
 
@@ -57,13 +58,21 @@ export default {
 <style lang="scss">
 .home-contents{
   background:#f3f3f3;
-    padding-bottom: 1.333333rem;
+ 
 .singleImg {
   width: 100%;
   background:#f3f3f3;
   margin-top: 0.266667rem;
 }
 
+
+}
+.nomore{
+    line-height: 1.28rem;
+    font-size: .32rem;
+    background-color: #eee;
+    color: #999999;
+    text-align: center;
 }
 
 </style>
