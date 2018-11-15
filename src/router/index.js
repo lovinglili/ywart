@@ -18,6 +18,12 @@ import YuanChuang from "@page/home/YuanChuang"
 import CangYi from "@page/home/CangYi"
 import ZaoYi from "@page/home/ZaoYi"
 
+//mine 的嵌套组件
+import AppMineLogin from  '@page/mine/AppMineLogin'
+import AppMineNewmessage from  '@page/mine/AppMineNewmessage'
+
+
+
 
 const routes=[
     {
@@ -72,14 +78,29 @@ const routes=[
         name:'mine',
         components:{
             main: AppMine
-         }
+         },
+         children : [
+            {
+                path:"zhanghaodenglu",
+                name:"zhanghaodenglu",
+                component:AppMineLogin,
+                
+            },
+            {
+                path:"shoujidenglu",
+                name:"shoujidenglu",
+                component:AppMineNewmessage,
+                
+            },
+        ]
     },
     {
         path:'/classify',
         name:'classify',
         components:{
             main: AppClassify
-         }
+         },
+         
     },
     {
         path:'/cart',

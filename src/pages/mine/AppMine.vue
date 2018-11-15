@@ -1,15 +1,19 @@
 <template>
 <div>
-    <h1>mine</h1>
+    <app-mine-set></app-mine-set>
+    
 </div>
 </template>
 
 <script>
+import AppMineSet from '@page/mine/AppMineSet'
     export default {
-     
+      components : {
+          AppMineSet
+      }
     }
 </script>
 
-<style>
+<style lang = "scss">
 
 </style>
