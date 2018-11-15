@@ -1,8 +1,9 @@
 <template>
-    <div class="art-allof-box">
-        <app-artlist-search> </app-artlist-search>
-        <div class="art-wraper">
+    <div class="art-allof-box" ref = "artAllofBox">
+        
+        <div class="art-wraper" >
             <div class="art-content">
+                <app-artlist-search> </app-artlist-search>
                 <app-artlist-star> </app-artlist-star>
                 <app-artlist-new-message> </app-artlist-new-message>
                 <app-artlist-old-star> </app-artlist-old-star>
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+    import scroll from '@utils/scroll'
     import AppArtlistSearch from '@page/artist/AppArtlistSearch'
     import AppArtlistStar from '@page/artist/AppArtlistStar'
     import AppArtlistNewMessage from '@page/artist/AppArtlistNewMessage'
@@ -28,13 +30,23 @@
             AppArtlistOldStar,
             AppArtlistIndex,
             AppArtlistFoot
+        },
+        mounted() {
+            setTimeout (()=>{
+                scroll({
+                   el: this.$refs.artAllofBox,
+                   handler : ()=>{}
+                })
+            },1000)
+                
+            
         }
     }
 </script>
 
 <style lang="scss">
-    .art-allof-box{background: white;overflow: auto;padding-bottom: 1.666667rem;}
-    .art-wraper{padding-top:1.413333rem;padding-bottom: .266667rem;}
-    body {overflow: auto;}
+    .art-allof-box{background: white;padding-bottom: 1.666667rem;height: 100%;overflow: hidden;}
+    .art-wraper{padding-bottom: .266667rem;}
+    
     .art-content {background: #f2f2f2}
 </style>

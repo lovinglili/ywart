@@ -25,16 +25,21 @@
            
         },
         mounted() {
-            this.$nextTick(() => {
-                scroll({
-                   el: this.$refs.appclassify
-                })
+            this.scroll = scroll({
+                    // el: this.$el
+                el: this.$refs.appclassify,
+                handler : ()=>{}
+                // onscroll: (y) => {
+                    
+                // }
             })
         }
+
     }
 </script>
 
 <style lang = "scss">
-    .appclassify{background: white;height: 100%;overflow: hidden;}
+    .appclassify{background: white;overflow: hidden;margin-top: 1.386667rem;height: 100vh;}
+   
    
 </style>

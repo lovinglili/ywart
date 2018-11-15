@@ -6,11 +6,11 @@
             >
                 <h4 class="item-title">分类</h4>
                 <div class="ulbox ulbox1" ref = "ulbox1">    
-                    <ul class="ulcontent">
+                    <ul class="ulcontent" >
                         <li
                             v-for = "i in firstlist.connect"
                             :key = "i"
-                            @click = "text"
+                            @tap = "text"
                         >{{i}}</li>
                     </ul>
                 </div>
@@ -23,7 +23,7 @@
                         <li
                             v-for = "i in secondlist.connect"
                             :key = "i"
-                            @click = "text"
+                            @tap = "text"
                         >{{i}}</li>
                     </ul>
                 </div>
@@ -32,18 +32,18 @@
             >
                 <h4 class="item-title">价格区间</h4>
                 <div class="ulbox ulbox3" ref = "ulbox3">    
-                    <ul class="ulcontent">
+                    <ul class="ulcontent" >
                         <li
                             v-for = "i in thirdlist.connect"
                             :key = "i"
-                            @click = "text"
+                            @tap = "text"
                         >{{i}}</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div class="appclassify-checkbtn">
+        <div class="appclassify-checkbtn" id="checklist-btn">
             <ul>
                 <li class="checkbtn-onestyle" @click = "allcheck">综合排序</li>
                 <li class="checkbtn-onestyle" @click = "hotcheck">热度排序</li>
@@ -103,15 +103,16 @@
                 });
                 console.log(dom)
                 console.log(dom.parentNode.childNodes)
-                if (dom.className == " "){
+                console.log(this.urlmessage)
+                if (dom.className == ""){
                     dom.classList.add("liactive")
                 }else {
                     dom.classList.remove("liactive")
                 }
                 
-              //  dom.classList.toggle('liactive')
-                e.stopPropagation()
-                e.preventDefault()
+                //dom.classList.toggle('liactive')
+                // e.stopPropagation()
+                // e.preventDefault()
                 let first =Object.values(this.firstlist.connect) 
                 let second = Object.values(this.secondlist.connect) 
                 let third = Object.values(this.thirdlist.connect)
@@ -131,7 +132,13 @@
                 }else if (second.indexOf(this.getmessage)>=0){
                     this.urlmessage.theme = this.getmessage
                 }else {
-                    this.urlmessage.price = this.getmessage
+                    switch (this.getmessage) {
+                        case "￥2,000以下" : this.urlmessage.price = '0～2000';break;
+                        case "￥2,000-￥8,000" : this.urlmessage.price = '2000～8000';break;
+                        case "￥8,000-￥15,000" : this.urlmessage.price = '8000～15000';break;
+                        case "￥15,000-￥30,000" : this.urlmessage.price = '15000～30000';break;
+                        case "￥30,000以上" : this.urlmessage.price = '30,000以上';break;
+                    }
                 }
                 
             },
@@ -140,6 +147,7 @@
                 if (this.sortmessage) {
                     this.urlmessage.sort = 7
                 }
+                console.log(this.urlmessage.sort)
             },
             pricecheck () {
                 this.pricemessage  = this.pricemessage +1
@@ -170,21 +178,26 @@
         mounted(){
            this.$nextTick(() => {
                 scroll({
-                   el: this.$refs.ulbox1
+                   el: this.$refs.ulbox1,
+                   handler : ()=>{}
                 })
                 scroll ({
-                    el:this.$refs.ulbox2
+                    el:this.$refs.ulbox2,
+                    handler : ()=>{}
                 })
                 scroll ({
-                    el:this.$refs.ulbox3
+                    el:this.$refs.ulbox3,
+                    handler : ()=>{}
                 })
             })
+            let  scrollTop = document.body.scrollTop
+            console.log(scrollTop)
         }
     }
 </script>
 
 <style lang="scss">
-    .appclassify-check {padding-bottom: 2.666667rem;margin-top:1.12rem}
+    .appclassify-check {padding-bottom: 2.666667rem;}
     .appclassify-checklist {
         .checklist-item {margin-left: .373333rem;margin-bottom: .426667rem;height: .693333rem;width:10.133333rem;
             .item-title{height: .693333rem;padding-right: 20px;margin-right: 5px;border-right:1px solid #dddddd;font-weight: normal;line-height: .693333rem;float: left }
@@ -200,9 +213,9 @@
             .checkbtn-twostyle {width: 2rem;height: 1.066667rem;border-left: .013333rem solid #dddddd ;font-weight: 700}
         }
     }
-    .appclassify-checkresult {padding: .213333rem .213333rem 1.333333rem .213333rem;height: 100%;overflow: hidden;}
+    .appclassify-checkresult {padding: .213333rem .213333rem 1.333333rem .213333rem;height: 100vh;overflow: hidden;}
 
-    .ulbox {width: 8rem;float: left;height: 1.333333rem;overflow: hidden;
+    .ulbox {width: 8rem;float: left;height: .666667rem;overflow: hidden;
         
     }
     .ulbox1{
@@ -216,4 +229,6 @@
     }
 
     .liactive{background: black;color :white!important;font-weight: 500}
+
+    
 </style>

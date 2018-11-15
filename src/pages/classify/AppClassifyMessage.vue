@@ -24,7 +24,7 @@
 
 <script>
 
-
+import scroll from '@utils/scroll'
 export default {
   name: "app",
   data() {
@@ -74,8 +74,10 @@ export default {
       this.scroll = scroll({
           // el: this.$el
         el: this.$refs.appclassifyChecklistItem,
-     //   handler : this.getData()
-        
+        handler : this.getData.bind(this)
+        // onscroll: (y) => {
+           
+        // }
       })
       
     
@@ -88,7 +90,7 @@ export default {
 .appclassify-checklist-item {
   width: 9.6rem;
   background: white;
-  height: 100vh;
+  height: 120%;
   overflow: hidden;
   .img-wraper {
     height: auto !important;
