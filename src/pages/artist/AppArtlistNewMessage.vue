@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import scroll from '@utils/scroll'
     export default {
         data () {
             return  {
@@ -51,6 +52,7 @@
                 this.scroll = scroll({
                     // el: this.$el
                     el: this.$refs.messageWraper,
+                    handler : ()=>{}
                     //   handler : this.getData()
                     
                 })
@@ -63,12 +65,12 @@
 <style lang="scss">
     .art-newmessage{height: 8.466667rem;padding-left: .746667rem;padding-right: .746667rem;padding-bottom:.266667rem;background: white;margin-top: .266667rem;}
     .message-title{padding: .533333rem 0 ;font-size: .453333rem;text-align: center;}
-    .message-item{height: 6.533333rem;float:left;
+    .message-item{height: 6.533333rem;float:left;margin-right:.533333rem;
         img{height: 5.146667rem;width: 8.506667rem;}
         .message-include{padding-top:.32rem;
             p{width: 100%;max-height: .506667rem;font-size: 28px;font-weight: bold;font-style: normal;font-stretch: normal;line-height: normal;letter-spacing: normal;color: #000000;text-align: left;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
         }
     }
     .message-wraper{width: 8.52rem;overflow: hidden;}
-    .message-content{height: 6.533333rem;width: 66.666667rem;;}
+    .message-content{height: 6.533333rem;width: 37.333333rem;}
 </style>
