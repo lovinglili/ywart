@@ -2,7 +2,7 @@
 <header>
     <div class="headerTop">
         <div class="headerTop-left"></div>
-        <div class="headerTop-center"><input type="text" placeholder="输入关键字搜索作品"></div>
+        <div class="headerTop-center"><input type="text" placeholder="输入关键字搜索作品" @click="shows.isShow=true"></div>
         <div class="headerTop-right"></div>
     </div>
     <div class="headerTops">
@@ -14,11 +14,18 @@
            
         </ul>
     </div>
+     <transition
+          enter-active-class="animated slideInUp"
+          leave-active-class="animated slideOutDown"
+     >
+         <app-home-search   :isShow.sync="shows.isShow" v-if="shows.isShow"></app-home-search>
+    </transition>
 </header>
     
 </template>
 
 <script>
+ import AppHomeSearch from "@c/layout/AppHomeSearch"
 export default {
   data() {
     return {
@@ -27,9 +34,16 @@ export default {
         { id: "2", title: "原创艺术", path: "yuanchuang" },
         { id: "3", title: "造艺", path: "zaoyi" },
         { id: "4", title: "藏艺术", path: "cangyi" }
-      ]
+      ],
+      shows:{
+                isShow:false
+            }
     };
+  },
+  components:{
+    AppHomeSearch
   }
+ 
 };
 </script>
 

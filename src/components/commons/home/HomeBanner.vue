@@ -3,10 +3,10 @@
         <swiper v-if= "billboards.length" :options="swiperOption" ref="mySwiper" >
             <swiper-slide v-for= '(billboard ,index) in billboards' :key= 'index'>
                 
-                <img width='100%' :src= 'billboard.MediaUrl' title= '' alt=  ''>
+                <img width='100%' :src= 'billboard.MediaUrl ? billboard.MediaUrl : billboard.ImgUrl' title= '' alt=  ''>
             </swiper-slide>
-           
-            <div class="swiper-scrollbar scrollWidth" slot="scrollbar"></div>      
+           <!-- <slot name="scrollbar" ></slot> -->
+            <div  class="swiper-scrollbar scrollWidth" slot="scrollbar"></div>      
         </swiper>
        
     </div>

@@ -14,6 +14,13 @@ module.exports={
                 pathRewrite:{
                     '^/ycmain':''
                 }
+            },
+            '/list':{
+                target:'https://www.ywart.com/',
+                changeOrigin:true,
+                pathRewrite:{
+                    '^/list':''
+                }
             }
         }
     },
