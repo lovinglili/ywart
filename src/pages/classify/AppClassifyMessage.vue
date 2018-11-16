@@ -1,7 +1,7 @@
 <template>
     <div class="appclassify-checklist-item" ref = "appclassifyChecklistItem">
         
-           <div class="checklist-content clearfix">
+           <div class="checklist-content clearfix" id="messageitembox">
                 
                 <div class="checklist-item" 
                   v-for = "item in imgsArr"
@@ -53,6 +53,9 @@ export default {
         this.imgsArr = this.imgsArr.concat(res.data.Data.Rows);
         
       });
+    },
+    getscroll (){
+      console.log(123)
     }
   },
   watch : {
@@ -79,8 +82,7 @@ export default {
            
         // }
       })
-      
-    
+  
 
   }
 }

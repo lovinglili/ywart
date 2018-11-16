@@ -38,7 +38,7 @@ import scroll from '@utils/scroll'
                 // console.log(this.newArr)
                 
                 this.newMessage = res.data.Body
-                console.log(this.newMessage)
+               // console.log(this.newMessage)
                
                     
                     
@@ -47,8 +47,8 @@ import scroll from '@utils/scroll'
         mounted (){
             
             setTimeout(()=>{
-                console.log(this.newMessage,123457)
-                console.log(document.getElementsByClassName("message-content"))
+              //  console.log(this.newMessage,123457)
+              //  console.log(document.getElementsByClassName("message-content"))
                 this.scroll = scroll({
                     // el: this.$el
                     el: this.$refs.messageWraper,

@@ -6,11 +6,11 @@ const scroll = ({
     handler// 拉动刷新的处理函数
    // onscroll
 }) => {
-    console.log(el)
+    //console.log(el)
   
     let scroll = new BetterScroll(el
     , {
-        probeType: 3,
+        probeType: 2,
         pullUpLoad: { //配置上拉加载
             threshold: 50 // 距离底部多少距离
         },
@@ -28,10 +28,9 @@ const scroll = ({
         await handler()
         scroll.finishPullUp() // 解决拉动刷新
         scroll.refresh() // 重新计算
+        
     })
-    // scroll.on('scroll', () => {
-    //     onscroll(scroll.y)
-    // })
+    
 
     return scroll
 }

@@ -75,6 +75,10 @@ const routes=[
     },
     {
         path:'/mine',
+        redirect:{path :'/mine/zhanghaodenglu'}
+    },
+    {
+        path:'/mine',
         name:'mine',
         components:{
             main: AppMine

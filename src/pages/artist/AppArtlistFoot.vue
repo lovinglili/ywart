@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="padding-bottom:1.2rem;">
         <a class="art-foot" href="">
             <img src="https://cdn.ywart.com/2018/artist/ysjzpzj.png" alt="">
         </a>

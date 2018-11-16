@@ -26,7 +26,7 @@
                 if (item.headimg==null){
                     item.headimg = "https://cdn.ywart.com/content/image/avatar_default.jpg"
                     this.specData.push(item)
-                    console.log(this.specData)
+                 //   console.log(this.specData)
                 }
             });
         }

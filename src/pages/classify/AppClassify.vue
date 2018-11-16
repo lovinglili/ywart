@@ -5,7 +5,7 @@
         <div class="appclassify" ref = "appclassify">
             <div class="classify-content">  
                 
-                <app-classify-checklist>
+                <app-classify-checklist :scrolly = "scrolly">
                 </app-classify-checklist>
             </div> 
         </div>
@@ -19,19 +19,39 @@
     import AppClassifyHeader from '@page/classify/AppClassifyHeader'
     import AppClassifyChecklist from '@page/classify/AppClassifyChecklist'
     export default {
+        data () {
+            return {
+                scrolly : 0
+            }
+        }
+        ,
+        methods : {
+            getscroll () {
+               
+            }
+        }
+        ,
         components : {
             AppClassifyHeader,
             AppClassifyChecklist
            
         },
+        watch : {
+           
+        }
+        
+        ,
         mounted() {
+           
             this.scroll = scroll({
                     // el: this.$el
                 el: this.$refs.appclassify,
-                handler : ()=>{}
-                // onscroll: (y) => {
-                    
-                // }
+                handler : ()=>{},
+                
+            })
+            this.scroll.on("scroll",()=>{
+                this.scrolly = this.scroll.y
+               
             })
         }
 

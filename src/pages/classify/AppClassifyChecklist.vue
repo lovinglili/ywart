@@ -85,12 +85,26 @@
                     refresh : 0
                 },
                 getmessage : '',
-                hotmessage : false,
+               // hotmessage : false,
                 pricemessage : 0,
                 allcheckmessage : false
             
             }
         },
+        props : ["scrolly"],
+        watch : {
+            scrolly : {
+                handler () {
+                    let scrolldom = document.getElementById("checklist-btn")
+                    if (this.scrolly <= -400){
+                     scrolldom.classList.add("checklist-spec")
+                    }else {
+                     scrolldom.classList.remove("checklist-spec")
+                    }
+                }
+            }
+        }
+        ,
         components : {
             AppClassifyMessage
         },
@@ -139,13 +153,19 @@
                     }
                 }
                 
+                
+
+
             },
             hotcheck () {
-                this.hotmessage = !this.hotmessage
-                if (this.sortmessage) {
-                    this.urlmessage.sort = 7
+                
+                if (this.urlmessage.sort != 7) {
+                   this.urlmessage.sort = 7
+                }else {
+                    this.urlmessage.sort = ''
                 }
-                console.log(this.urlmessage.sort)
+               
+               
             },
             pricecheck () {
                 this.pricemessage  = this.pricemessage +1
@@ -188,14 +208,33 @@
                     handler : ()=>{}
                 })
             })
-            let  scrollTop = document.body.scrollTop
-            console.log(scrollTop)
+            
         }
     }
 </script>
 
 <style lang="scss">
-    .appclassify-check {padding-bottom: 2.666667rem;}
+    .appclassify-check {padding-bottom: 2.666667rem;
+        .appclassify-checkresult {padding: .213333rem .213333rem 1.333333rem .213333rem;height: 100vh;overflow: hidden;}
+
+        .ulbox {width: 8rem;float: left;height: .666667rem;overflow: hidden;
+            
+        }
+        .ulbox1{
+            ul{width: 12.666667rem;}
+        }
+        .ulbox2{
+            ul{width: 10.666667rem;}
+        }
+        .ulbox3 {
+            ul {width: 17.333333rem;}
+        }
+
+        .liactive{background: black;color :white!important;font-weight: 500}
+
+        .checklist-spec {position: fixed;top: 6rem;z-index: 9999;background: white;}
+    
+    }
     .appclassify-checklist {
         .checklist-item {margin-left: .373333rem;margin-bottom: .426667rem;height: .693333rem;width:10.133333rem;
             .item-title{height: .693333rem;padding-right: 20px;margin-right: 5px;border-right:1px solid #dddddd;font-weight: normal;line-height: .693333rem;float: left }
@@ -211,22 +250,5 @@
             .checkbtn-twostyle {width: 2rem;height: 1.066667rem;border-left: .013333rem solid #dddddd ;font-weight: 700}
         }
     }
-    .appclassify-checkresult {padding: .213333rem .213333rem 1.333333rem .213333rem;height: 100vh;overflow: hidden;}
-
-    .ulbox {width: 8rem;float: left;height: .666667rem;overflow: hidden;
-        
-    }
-    .ulbox1{
-        ul{width: 12.666667rem;}
-    }
-    .ulbox2{
-        ul{width: 10.666667rem;}
-    }
-    .ulbox3 {
-        ul {width: 17.333333rem;}
-    }
-
-    .liactive{background: black;color :white!important;font-weight: 500}
-
     
 </style>
