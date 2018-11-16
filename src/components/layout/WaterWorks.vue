@@ -50,7 +50,7 @@ components: {
   },
   methods:{
     imgurl(name){
-  
+        // console.log(name)
         return "https://cdn.ywart.com/yw/"+name+"_small01"
     }
   }
