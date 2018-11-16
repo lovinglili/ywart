@@ -49,6 +49,7 @@
             .setup-btn {height: .72rem;font-size: 34px;}
         }
 
+    .active {height: .72rem;font-size: 34px;border-bottom :4px solid black;font-weight: 700;}
 
         .submit-btn {height: 1.066667rem;background: black;color: white;font-size: 36px;text-align: center;line-height: 80px;margin-top:1.6rem; }
         .other-btn-list{height: .533333rem;margin-top: .426667rem;text-align: center;
@@ -63,5 +64,4 @@
         }
     }
 
-    .active {height: .72rem;font-size: 34px;border-bottom :4px solid black;font-weight: 700;}
 </style>
