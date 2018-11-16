@@ -69,6 +69,9 @@ export default {
   mounted(){ 
       this.$refs.search_list.addEventListener('scroll', this.scroll)
   },
+  beforeDestory(){
+      this.$refs.search_list.removeEventListener('scroll', this.scroll)
+  },
   methods: {
     getitems() {
       var datas ="";
