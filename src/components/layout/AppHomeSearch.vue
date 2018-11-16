@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import bus from "@utils/bus"
 export default {
   data() {
     return {

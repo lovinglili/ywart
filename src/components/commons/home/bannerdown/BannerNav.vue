@@ -42,6 +42,7 @@
 <script>
 import SearchWords from "./SearchWords";
 import SearchList from "./SearchList";
+import bus from "@utils/bus"
 export default {
   components: {
     SearchWords,
@@ -62,7 +63,9 @@ export default {
   methods: {
     enterSearch() {
       this.$set(this.searchWords, "keyword", this.$refs.inputs.value);
-       this.isHas = true;
+      if( this.$refs.inputs.value!=""){
+        this.isHas = true;
+      }
     },
     noCategory() {
       this.$route.query.category = "";
@@ -74,12 +77,17 @@ export default {
       } else {
         this.isHas = true;
       }
-      // console.log(this.isHas);
     }
   },
+
   mounted() {
-    //  this.$set(this.searchWords, "category",  this.$route.query.category);
-    this.searchWords["category"] = this.$route.query.category;
+
+    if(this.$route.query.name){
+      this.$set(this.searchWords, "keyword", this.$route.query.name);
+    }
+    if(this.$route.query.category){
+      this.searchWords["category"] = this.$route.query.category;
+    }
   }
 };
 </script>
@@ -112,6 +120,7 @@ export default {
           center center;
         height: 100%;
         width: 15%;
+        cursor: pointer;
       }
       .header-input-out {
         width: 85%;

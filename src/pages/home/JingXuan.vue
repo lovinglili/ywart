@@ -74,6 +74,7 @@ export default {
 .bg-lazy {
   width: 100vw;
   height: 100vh;
+  // text-align: center;
   background: red;
 }
 

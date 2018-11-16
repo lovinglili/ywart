@@ -6,7 +6,7 @@
         <waterfall-slot
           v-for="(item, index) in indexDatas"
           :width="screenW"
-          :height=" item.ImgHeight * screenW / item.ImgWidth + 170"
+          :height=" item.ImgHeight * screenW/ item.ImgWidth + 170"
           :order="index"
           :key="index"
         >
@@ -31,6 +31,7 @@
   </waterfall-slot>
 </waterfall>
 </ul>
+
 </template>
 
 <script>

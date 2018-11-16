@@ -7,7 +7,6 @@
                         {{searchword }}
                     </li>
                 </template>
-                
             </ul>
         </div>
     </div>
